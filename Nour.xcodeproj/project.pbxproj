@@ -56,6 +56,7 @@
 		A6487C862A36D3E1003ED9BF /* Nour */ = {
 			isa = PBXGroup;
 			children = (
+				A6487C9B2A36D939003ED9BF /* Resources */,
 				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
 				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
 				A6487C8B2A36D3E1003ED9BF /* ViewController.swift */,
@@ -65,6 +66,13 @@
 				A6487C952A36D3E2003ED9BF /* Info.plist */,
 			);
 			path = Nour;
+			sourceTree = "<group>";
+		};
+		A6487C9B2A36D939003ED9BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
