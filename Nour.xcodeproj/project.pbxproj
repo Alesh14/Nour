@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C872A36D3E1003ED9BF /* AppDelegate.swift */; };
 		A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */; };
-		A6487C8C2A36D3E1003ED9BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C8B2A36D3E1003ED9BF /* ViewController.swift */; };
 		A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6487C902A36D3E2003ED9BF /* Assets.xcassets */; };
 		A6487C942A36D3E2003ED9BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6487C922A36D3E2003ED9BF /* LaunchScreen.storyboard */; };
+		A6487CA02A36E5D2003ED9BF /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6487C842A36D3E1003ED9BF /* Nour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6487C872A36D3E1003ED9BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6487C8B2A36D3E1003ED9BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6487C902A36D3E2003ED9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6487C932A36D3E2003ED9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6487C952A36D3E2003ED9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A6487C9B2A36D939003ED9BF /* Resources */,
-				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
-				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
-				A6487C8B2A36D3E1003ED9BF /* ViewController.swift */,
+				A6487C9E2A36E580003ED9BF /* Controllers */,
 				A6487C902A36D3E2003ED9BF /* Assets.xcassets */,
 				A6487C922A36D3E2003ED9BF /* LaunchScreen.storyboard */,
 				A6487C952A36D3E2003ED9BF /* Info.plist */,
@@ -68,8 +66,18 @@
 		A6487C9B2A36D939003ED9BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
+				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6487C9E2A36E580003ED9BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6487C8C2A36D3E1003ED9BF /* ViewController.swift in Sources */,
+				A6487CA02A36E5D2003ED9BF /* MainScreen.swift in Sources */,
 				A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */,
 				A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */,
 			);
@@ -280,7 +288,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58P54NX7P7;
@@ -307,7 +314,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58P54NX7P7;
