@@ -28,7 +28,15 @@ class MainScreen: UITabBarController {
         
         nav2.tabBarItem = UITabBarItem(title: "Dhikr", image: UIImage(systemName: "33.circle"), tag: 1)
         
-        setViewControllers([nav1, nav2], animated: false)
+        let VC3 = SettingsScreen()
+        VC3.title = "Settings"
+        
+        let nav3 = UINavigationController(rootViewController: VC3)
+        nav3.navigationBar.prefersLargeTitles = true
+        
+        nav3.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 1)
+        
+        setViewControllers([nav1, nav2, nav3], animated: false)
     }
 
 }

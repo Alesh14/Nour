@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A601F73B2A3ADC8D00989752 /* QuranData.json in Resources */ = {isa = PBXBuildFile; fileRef = A601F73A2A3ADC8D00989752 /* QuranData.json */; };
+		A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */; };
+		A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A601F7422A3ADD2100989752 /* SettingsScreen.swift */; };
 		A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C872A36D3E1003ED9BF /* AppDelegate.swift */; };
 		A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */; };
 		A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6487C902A36D3E2003ED9BF /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A601F73A2A3ADC8D00989752 /* QuranData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuranData.json; sourceTree = "<group>"; };
+		A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KFGQPC Uthman Taha Naskh Regular.ttf"; sourceTree = "<group>"; };
+		A601F7422A3ADD2100989752 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		A6487C842A36D3E1003ED9BF /* Nour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6487C872A36D3E1003ED9BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,22 @@
 			path = SurahControllers;
 			sourceTree = "<group>";
 		};
+		A601F73C2A3ADC9B00989752 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A601F7412A3ADCFB00989752 /* SettingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A601F7422A3ADD2100989752 /* SettingsScreen.swift */,
+			);
+			path = SettingControllers;
+			sourceTree = "<group>";
+		};
 		A6487C7B2A36D3E1003ED9BF = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +128,8 @@
 			children = (
 				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
 				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
+				A601F73A2A3ADC8D00989752 /* QuranData.json */,
+				A601F73C2A3ADC9B00989752 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,6 +137,7 @@
 		A6487C9E2A36E580003ED9BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A601F7412A3ADCFB00989752 /* SettingControllers */,
 				A601F7392A3AD82800989752 /* SurahControllers */,
 				A601F7382A3AD81F00989752 /* DhikrControllers */,
 				A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */,
@@ -184,7 +209,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A601F73B2A3ADC8D00989752 /* QuranData.json in Resources */,
 				A6487C942A36D3E2003ED9BF /* LaunchScreen.storyboard in Resources */,
+				A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */,
 				A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +227,7 @@
 				A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */,
 				A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */,
 				A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */,
+				A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */,
 				A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
