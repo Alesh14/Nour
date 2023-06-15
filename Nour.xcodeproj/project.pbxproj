@@ -85,12 +85,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		A601F7412A3ADCFB00989752 /* SettingControllers */ = {
+		A601F7412A3ADCFB00989752 /* SettingsControllers */ = {
 			isa = PBXGroup;
 			children = (
 				A601F7422A3ADD2100989752 /* SettingsScreen.swift */,
 			);
-			path = SettingControllers;
+			path = SettingsControllers;
 			sourceTree = "<group>";
 		};
 		A6487C7B2A36D3E1003ED9BF = {
@@ -137,7 +137,7 @@
 		A6487C9E2A36E580003ED9BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A601F7412A3ADCFB00989752 /* SettingControllers */,
+				A601F7412A3ADCFB00989752 /* SettingsControllers */,
 				A601F7392A3AD82800989752 /* SurahControllers */,
 				A601F7382A3AD81F00989752 /* DhikrControllers */,
 				A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */,
