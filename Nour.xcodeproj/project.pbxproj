@@ -55,6 +55,22 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		A601F7382A3AD81F00989752 /* DhikrControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */,
+			);
+			path = DhikrControllers;
+			sourceTree = "<group>";
+		};
+		A601F7392A3AD82800989752 /* SurahControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6487CA32A378FE9003ED9BF /* SurahScreen.swift */,
+			);
+			path = SurahControllers;
+			sourceTree = "<group>";
+		};
 		A6487C7B2A36D3E1003ED9BF = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +113,9 @@
 		A6487C9E2A36E580003ED9BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A601F7392A3AD82800989752 /* SurahControllers */,
+				A601F7382A3AD81F00989752 /* DhikrControllers */,
 				A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */,
-				A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */,
-				A6487CA32A378FE9003ED9BF /* SurahScreen.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
