@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class SurahScreen: UIViewController {
     
+    var quranData: QuranData?
+    var surahs: [QuranData.Surah] = []
+
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
         
@@ -20,8 +24,43 @@ class SurahScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        view.backgroundColor = .systemBackground
         
+        fetchData()
+        
+        guard let quranData = quranData else { return }
+        
+        quranData.surahs.forEach {
+            surahs.append($0)
+        }
+        
+        view.addSubview(tableView)
+        
+        configureTableView()
+    }
+    
+    func configureTableView() {
+        tableView.rowHeight = 100.0
+        
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        tableView.register(SurahNameCell.self, forCellReuseIdentifier: K.surahIdentifier)
+    }
+    
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "QuranData", withExtension: "json") else { return }
+        
+        guard let data = try? Data(contentsOf: url) else { return }
+        
+        do {
+            let decoder = JSONDecoder()
+            quranData = try decoder.decode(QuranData.self, from: data)
+        } catch {
+            fatalError("Data is invalid")
+        }
     }
     
 }
@@ -32,7 +71,7 @@ extension SurahScreen: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let i = indexPath.row
-        
+        print(i)
     }
     
 }
@@ -42,12 +81,18 @@ extension SurahScreen: UITableViewDelegate {
 extension SurahScreen: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        surahs.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as! SurahNameCell
+        
+        let i = indexPath.row
+        cell.surahNumberLabel.text = "\(i + 1)."
+        cell.surahNameLabel.text = surahs[i].englishName
+        cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
+        
+        return cell
     }
     
 }

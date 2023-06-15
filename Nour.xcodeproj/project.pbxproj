@@ -18,6 +18,9 @@
 		A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */; };
 		A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487CA32A378FE9003ED9BF /* SurahScreen.swift */; };
 		A6487CA72A379079003ED9BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6487CA62A379079003ED9BF /* SnapKit */; };
+		A6F7B3582A3AE1AB002291CB /* QuranData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3572A3AE1AB002291CB /* QuranData.swift */; };
+		A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */; };
+		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrScreen.swift; sourceTree = "<group>"; };
 		A6487CA32A378FE9003ED9BF /* SurahScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahScreen.swift; sourceTree = "<group>"; };
+		A6F7B3572A3AE1AB002291CB /* QuranData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuranData.swift; path = Nour/QuranData.swift; sourceTree = SOURCE_ROOT; };
+		A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahNameCell.swift; sourceTree = "<group>"; };
+		A6F7B35B2A3AE7EF002291CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 		A601F7352A3981D400989752 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6F7B3572A3AE1AB002291CB /* QuranData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -73,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A6487CA32A378FE9003ED9BF /* SurahScreen.swift */,
+				A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */,
 			);
 			path = SurahControllers;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
 				A601F73A2A3ADC8D00989752 /* QuranData.json */,
 				A601F73C2A3ADC9B00989752 /* Fonts */,
+				A6F7B35B2A3AE7EF002291CB /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,11 +233,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6487CA02A36E5D2003ED9BF /* MainScreen.swift in Sources */,
+				A6F7B3582A3AE1AB002291CB /* QuranData.swift in Sources */,
+				A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */,
 				A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */,
 				A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */,
 				A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */,
 				A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */,
 				A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */,
+				A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
