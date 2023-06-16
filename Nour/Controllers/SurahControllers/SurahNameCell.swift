@@ -16,7 +16,6 @@ class SurahNameCell: UITableViewCell {
     lazy var surahNameLabel: UILabel = {
         var label = UILabel()
         
-        
         label.font = UIFont(name: fontName, size: fontSize)
         
         return label
@@ -41,26 +40,21 @@ class SurahNameCell: UITableViewCell {
         return label
     }()
     
+    lazy var translationLabel: UILabel = {
+        var label = UILabel()
+        
+        let newFontSize = 15.0
+        label.font = UIFont(name: fontName, size: newFontSize)
+        
+        return label
+    }()
+    
     private lazy var rombView: UIView = {
         var view = UIView()
         
         view.rotate(angle: 45.0)
         
-        let dynamicColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
-            if traitCollection.userInterfaceStyle == .dark {
-                let red: CGFloat = 0x34 / 255.0
-                let green: CGFloat = 0x3A / 255.0
-                let blue: CGFloat = 0x3F / 255.0
-
-                return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-            } else {
-                let red: CGFloat = 0xF4 / 255.0
-                let green: CGFloat = 0xF5 / 255.0
-                let blue: CGFloat = 0xF6 / 255.0
-
-                return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-            }
-        }
+        let dynamicColor = UIColor(named: "Dynamic-Color")
         
         view.layer.cornerRadius = 5.0
         
@@ -71,27 +65,46 @@ class SurahNameCell: UITableViewCell {
     
     private lazy var centerView: UIView = {
         var view = UIView()
-        
-        
-        
         return view
     }()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.layer.borderWidth = 1.0
+        
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.gray.cgColor
+    
+        contentView.layer.cornerRadius = 5.0
+        
+        let paddingView = UIView(frame: CGRect(x: 10, y: 10, width: contentView.frame.width - 20,
+                                                             height: contentView.frame.height - 20))
+        
+        paddingView.backgroundColor = .clear
+        contentView.addSubview(paddingView)
+        
         selectionStyle = .none
         
         addSubview(rombView)
-        
         rombView.addSubview(surahNumberLabel)
+        
+        addSubview(centerView)
+        centerView.addSubview(surahNameLabel)
+        centerView.addSubview(translationLabel)
         
         configureCell()
     }
     
     func configureCell() {
         rombView.snp.makeConstraints {
-            $0.left.equalTo(40.0)
+            $0.left.equalTo(30.0)
             $0.width.height.equalTo(50.0)
             $0.centerY.equalToSuperview()
         }
@@ -99,7 +112,7 @@ class SurahNameCell: UITableViewCell {
         surahNumberLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-    
+        
         
     }
     

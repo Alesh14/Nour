@@ -11,7 +11,9 @@ import SnapKit
 class SurahScreen: UIViewController {
     
     var quranData: QuranData?
-    var surahs: [Surah] = []
+    var surahs = [Surah]()
+    
+    let cellSpacingHeight: CGFloat = 10.0
 
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
@@ -19,6 +21,9 @@ class SurahScreen: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.rowHeight = 120.0
+        tableView.separatorStyle = .none
+            
         return tableView
     }()
 
@@ -41,8 +46,6 @@ class SurahScreen: UIViewController {
     }
     
     func configureTableView() {
-        tableView.rowHeight = 100.0
-        
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -70,9 +73,7 @@ class SurahScreen: UIViewController {
 extension SurahScreen: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let i = indexPath.row
-
-//        navigationController?.pushViewController(, animated: true)
+        
     }
     
 }
@@ -92,8 +93,9 @@ extension SurahScreen: UITableViewDataSource {
         cell.surahNumberLabel.text = "\(i + 1)"
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
+        cell.translationLabel.text = surahs[i].englishNameTranslation
         
         return cell
     }
-    
+
 }
