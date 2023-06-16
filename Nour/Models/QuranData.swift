@@ -81,4 +81,3 @@ enum RevelationType: String, Codable {
     case meccan = "Meccan"
     case medinan = "Medinan"
 }
-

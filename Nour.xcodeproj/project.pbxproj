@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A601F73B2A3ADC8D00989752 /* QuranData.json in Resources */ = {isa = PBXBuildFile; fileRef = A601F73A2A3ADC8D00989752 /* QuranData.json */; };
 		A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */; };
 		A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A601F7422A3ADD2100989752 /* SettingsScreen.swift */; };
 		A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487C872A36D3E1003ED9BF /* AppDelegate.swift */; };
@@ -22,10 +21,14 @@
 		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 		A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */; };
 		A6F7B3612A3C108B002291CB /* QuranData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3602A3C108B002291CB /* QuranData.swift */; };
+		A6F7B36D2A3C4012002291CB /* p77.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B36C2A3C4012002291CB /* p77.ttf */; };
+		A6F7B36F2A3C58C5002291CB /* SurahPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B36E2A3C58C5002291CB /* SurahPageScreen.swift */; };
+		A6F7B3732A3CC843002291CB /* QuranDataTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3722A3CC843002291CB /* QuranDataTranslate.swift */; };
+		A6F7B3752A3CD258002291CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3742A3CD258002291CB /* NetworkManager.swift */; };
+		A6F7B3772A3CE244002291CB /* AyahCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3762A3CE244002291CB /* AyahCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A601F73A2A3ADC8D00989752 /* QuranData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuranData.json; sourceTree = "<group>"; };
 		A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KFGQPC Uthman Taha Naskh Regular.ttf"; sourceTree = "<group>"; };
 		A601F7422A3ADD2100989752 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		A6487C842A36D3E1003ED9BF /* Nour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +44,11 @@
 		A6F7B35B2A3AE7EF002291CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Vara-VF.ttf"; sourceTree = "<group>"; };
 		A6F7B3602A3C108B002291CB /* QuranData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranData.swift; sourceTree = "<group>"; };
+		A6F7B36C2A3C4012002291CB /* p77.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = p77.ttf; sourceTree = "<group>"; };
+		A6F7B36E2A3C58C5002291CB /* SurahPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahPageScreen.swift; sourceTree = "<group>"; };
+		A6F7B3722A3CC843002291CB /* QuranDataTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranDataTranslate.swift; sourceTree = "<group>"; };
+		A6F7B3742A3CD258002291CB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A6F7B3762A3CE244002291CB /* AyahCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyahCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		A601F7372A3981E400989752 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A6F7B3742A3CD258002291CB /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -73,8 +82,10 @@
 		A601F7392A3AD82800989752 /* SurahControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A6F7B3762A3CE244002291CB /* AyahCell.swift */,
 				A6487CA32A378FE9003ED9BF /* SurahScreen.swift */,
 				A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */,
+				A6F7B36E2A3C58C5002291CB /* SurahPageScreen.swift */,
 			);
 			path = SurahControllers;
 			sourceTree = "<group>";
@@ -84,6 +95,7 @@
 			children = (
 				A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */,
 				A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */,
+				A6F7B36C2A3C4012002291CB /* p77.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -131,7 +143,6 @@
 			children = (
 				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
 				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
-				A601F73A2A3ADC8D00989752 /* QuranData.json */,
 				A601F73C2A3ADC9B00989752 /* Fonts */,
 				A6F7B35B2A3AE7EF002291CB /* Constants.swift */,
 			);
@@ -153,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				A6F7B3602A3C108B002291CB /* QuranData.swift */,
+				A6F7B3722A3CC843002291CB /* QuranDataTranslate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,9 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A601F73B2A3ADC8D00989752 /* QuranData.json in Resources */,
 				A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */,
 				A6487C942A36D3E2003ED9BF /* LaunchScreen.storyboard in Resources */,
+				A6F7B36D2A3C4012002291CB /* p77.ttf in Resources */,
 				A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */,
 				A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */,
 			);
@@ -236,12 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F7B3752A3CD258002291CB /* NetworkManager.swift in Sources */,
 				A6F7B3612A3C108B002291CB /* QuranData.swift in Sources */,
 				A6487CA02A36E5D2003ED9BF /* MainScreen.swift in Sources */,
 				A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */,
 				A6487C882A36D3E1003ED9BF /* AppDelegate.swift in Sources */,
+				A6F7B3772A3CE244002291CB /* AyahCell.swift in Sources */,
 				A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */,
 				A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */,
+				A6F7B36F2A3C58C5002291CB /* SurahPageScreen.swift in Sources */,
+				A6F7B3732A3CC843002291CB /* QuranDataTranslate.swift in Sources */,
 				A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */,
 				A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */,
 				A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */,

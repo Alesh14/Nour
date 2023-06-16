@@ -10,8 +10,10 @@ import SnapKit
 
 class SurahScreen: UIViewController {
     
-    var quranData: QuranData?
+    let network = NetworkManager()
+    
     var surahs = [Surah]()
+    var translatedSurahs = [Surah]()
     
     let cellSpacingHeight: CGFloat = 10.0
 
@@ -33,36 +35,36 @@ class SurahScreen: UIViewController {
         view.backgroundColor = .systemBackground
         
         fetchData()
-        
-        guard let quranData = quranData else { return }
-        
-        quranData.data.surahs.forEach {
-            surahs.append($0)
-        }
-        
-        view.addSubview(tableView)
-        
-        configureTableView()
     }
     
     func configureTableView() {
+        tableView.register(SurahNameCell.self, forCellReuseIdentifier: K.surahIdentifier)
+        
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
-        tableView.register(SurahNameCell.self, forCellReuseIdentifier: K.surahIdentifier)
     }
     
     func fetchData() {
-        guard let url = Bundle.main.url(forResource: "QuranData", withExtension: "json") else { return }
+        network.getQuranArabic { data in
+            guard let data = data else { return }
+            
+            data.data.surahs.forEach {
+                self.surahs.append($0)
+            }
+            
+            DispatchQueue.main.async {
+                self.view.addSubview(self.tableView)
+                self.configureTableView()
+            }
+        }
         
-        guard let data = try? Data(contentsOf: url) else { return }
-        
-        do {
-            let decoder = JSONDecoder()
-            quranData = try decoder.decode(QuranData.self, from: data)
-        } catch {
-            fatalError("Data is invalid")
+        network.getQuranEnglish { data in
+            guard let data = data else { return }
+            
+            data.data.surahs.forEach {
+                self.translatedSurahs.append($0)
+            }
         }
     }
     
@@ -73,7 +75,13 @@ class SurahScreen: UIViewController {
 extension SurahScreen: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let i = indexPath.row
+        let surahPageScreen = SurahPageScreen(surah: surahs[i], translatedSurah: translatedSurahs[i])
         
+        let nav = UINavigationController(rootViewController: surahPageScreen)
+        nav.modalPresentationStyle = .overFullScreen
+        
+        present(nav, animated: true)
     }
     
 }
@@ -94,6 +102,10 @@ extension SurahScreen: UITableViewDataSource {
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
         cell.translationLabel.text = surahs[i].englishNameTranslation
+        
+        let text = surahs[i].name.components(separatedBy: " ").last
+        
+        cell.arabicSurahNameLabel.text = text
         
         return cell
     }
