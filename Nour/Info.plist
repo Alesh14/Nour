@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>KFGQPC Uthman Taha Naskh Regular.ttf</string>
+		<string>Proxima Vara-VF.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

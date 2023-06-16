@@ -16,7 +16,7 @@ class MainScreen: UITabBarController {
         VC1.title = "Quran"
         
         let nav1 = UINavigationController(rootViewController: VC1)
-        nav1.navigationBar.prefersLargeTitles = true
+        nav1.navigationBar.prefersLargeTitles = false
         
         nav1.tabBarItem = UITabBarItem(title: "Quran", image: UIImage(systemName: "book.circle"), tag: 1)
         
@@ -32,7 +32,7 @@ class MainScreen: UITabBarController {
         VC3.title = "Settings"
         
         let nav3 = UINavigationController(rootViewController: VC3)
-        nav3.navigationBar.prefersLargeTitles = true
+        nav3.navigationBar.prefersLargeTitles = false
         
         nav3.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 1)
         

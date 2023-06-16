@@ -11,7 +11,7 @@ import SnapKit
 class SurahScreen: UIViewController {
     
     var quranData: QuranData?
-    var surahs: [QuranData.Surah] = []
+    var surahs: [Surah] = []
 
     private lazy var tableView: UITableView = {
         var tableView = UITableView()
@@ -31,7 +31,7 @@ class SurahScreen: UIViewController {
         
         guard let quranData = quranData else { return }
         
-        quranData.surahs.forEach {
+        quranData.data.surahs.forEach {
             surahs.append($0)
         }
         
@@ -70,8 +70,9 @@ class SurahScreen: UIViewController {
 extension SurahScreen: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let i = indexPath.row
-        print(i)
+//        let i = indexPath.row
+
+//        navigationController?.pushViewController(, animated: true)
     }
     
 }
@@ -88,7 +89,7 @@ extension SurahScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as! SurahNameCell
         
         let i = indexPath.row
-        cell.surahNumberLabel.text = "\(i + 1)."
+        cell.surahNumberLabel.text = "\(i + 1)"
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
         
