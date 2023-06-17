@@ -12,10 +12,19 @@ class SurahPageScreen: UIViewController {
     private let surah: Surah
     private let translatedSurah: Surah
 
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = surah.englishName
+        label.textAlignment = .center
+        label.font = UIFont(name: "ProximaVara-Roman_Bold", size: 20.0)
+        
+        return label
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AyahCell.self, forCellReuseIdentifier: K.ayahIdentifier)
             
@@ -36,8 +45,6 @@ class SurahPageScreen: UIViewController {
     private lazy var titleView: UIView = {
         let view = UIView()
         
-        view.backgroundColor = UIColor(named: "Dynamic-Color")
-        
         return view
     }()
     
@@ -54,6 +61,8 @@ class SurahPageScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureNavBar()
+        
         view.addSubview(tableView)
         configureTableView()
         
@@ -64,12 +73,8 @@ class SurahPageScreen: UIViewController {
         dismiss(animated: true)
     }
     
-    func configureTitleView() {
-        titleView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            $0.left.right.equalToSuperview()
-            $0.height.equalTo(50.0)
-        }
+    func configureNavBar() {
+        navigationItem.titleView = titleLabel
     }
     
     func configureTableView() {
@@ -79,17 +84,6 @@ class SurahPageScreen: UIViewController {
     }
     
 }
-
-// MARK: - UITablewViewDelegate
-
-extension SurahPageScreen: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-}
-
 
 // MARK: - UITableViewDataSource
 
@@ -103,6 +97,7 @@ extension SurahPageScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
         
         let i = indexPath.row
+        cell.numLabel.text = "\(surah.number):\(i + 1)"
         cell.ayahLabel.text = surah.ayahs[i].text
         
         return cell

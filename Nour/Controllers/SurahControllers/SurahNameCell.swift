@@ -55,7 +55,7 @@ class SurahNameCell: UITableViewCell {
         var label = UILabel()
             
         label.textAlignment = .center
-        label.font = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 20.0)
+        label.font = UIFont(name: "noorehidayat", size: 20.0)
         
         return label
     }()
@@ -150,7 +150,7 @@ class SurahNameCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 // MARK: - rotate (UIView)
