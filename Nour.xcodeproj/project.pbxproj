@@ -17,11 +17,11 @@
 		A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */; };
 		A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487CA32A378FE9003ED9BF /* SurahScreen.swift */; };
 		A6487CA72A379079003ED9BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6487CA62A379079003ED9BF /* SnapKit */; };
+		A66416AF2A3D742400210E43 /* noorehidayat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A66416AE2A3D742400210E43 /* noorehidayat.ttf */; };
 		A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */; };
 		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 		A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */; };
 		A6F7B3612A3C108B002291CB /* QuranData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3602A3C108B002291CB /* QuranData.swift */; };
-		A6F7B36D2A3C4012002291CB /* p77.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B36C2A3C4012002291CB /* p77.ttf */; };
 		A6F7B36F2A3C58C5002291CB /* SurahPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B36E2A3C58C5002291CB /* SurahPageScreen.swift */; };
 		A6F7B3732A3CC843002291CB /* QuranDataTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3722A3CC843002291CB /* QuranDataTranslate.swift */; };
 		A6F7B3752A3CD258002291CB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3742A3CD258002291CB /* NetworkManager.swift */; };
@@ -40,11 +40,11 @@
 		A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrScreen.swift; sourceTree = "<group>"; };
 		A6487CA32A378FE9003ED9BF /* SurahScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahScreen.swift; sourceTree = "<group>"; };
+		A66416AE2A3D742400210E43 /* noorehidayat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noorehidayat.ttf; sourceTree = "<group>"; };
 		A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahNameCell.swift; sourceTree = "<group>"; };
 		A6F7B35B2A3AE7EF002291CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Vara-VF.ttf"; sourceTree = "<group>"; };
 		A6F7B3602A3C108B002291CB /* QuranData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranData.swift; sourceTree = "<group>"; };
-		A6F7B36C2A3C4012002291CB /* p77.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = p77.ttf; sourceTree = "<group>"; };
 		A6F7B36E2A3C58C5002291CB /* SurahPageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahPageScreen.swift; sourceTree = "<group>"; };
 		A6F7B3722A3CC843002291CB /* QuranDataTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranDataTranslate.swift; sourceTree = "<group>"; };
 		A6F7B3742A3CD258002291CB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			children = (
 				A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */,
 				A601F73D2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf */,
-				A6F7B36C2A3C4012002291CB /* p77.ttf */,
+				A66416AE2A3D742400210E43 /* noorehidayat.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -234,8 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */,
+				A66416AF2A3D742400210E43 /* noorehidayat.ttf in Resources */,
 				A6487C942A36D3E2003ED9BF /* LaunchScreen.storyboard in Resources */,
-				A6F7B36D2A3C4012002291CB /* p77.ttf in Resources */,
 				A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */,
 				A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */,
 			);
