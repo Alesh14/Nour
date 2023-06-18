@@ -36,6 +36,7 @@ class SurahNameCell: UITableViewCell {
         
         let newFontSize = 15.0
         label.font = UIFont(name: fontName, size: newFontSize)
+        label.textColor = UIColor(named: "Dynamic-Color2")
         
         return label
     }()
@@ -45,6 +46,16 @@ class SurahNameCell: UITableViewCell {
         
         let newFontSize = 15.0
         label.font = UIFont(name: fontName, size: newFontSize)
+        label.textColor = UIColor(named: "Dynamic-Color2")
+        
+        return label
+    }()
+    
+    lazy var arabicSurahNameLabel: UILabel = {
+        var label = UILabel()
+            
+        label.textAlignment = .center
+        label.font = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 20.0)
         
         return label
     }()
@@ -63,8 +74,21 @@ class SurahNameCell: UITableViewCell {
         return view
     }()
     
-    private lazy var centerView: UIView = {
-        var view = UIView()
+    private lazy var leftStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [surahNameLabel, translationLabel])
+        
+        view.spacing = 5.0
+        view.axis = .vertical
+        
+        return view
+    }()
+    
+    private lazy var rightStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [arabicSurahNameLabel, ayahCountLabel])
+        
+        view.spacing = 5.0
+        view.axis = .vertical
+        
         return view
     }()
     
@@ -95,10 +119,9 @@ class SurahNameCell: UITableViewCell {
         addSubview(rombView)
         rombView.addSubview(surahNumberLabel)
         
-        addSubview(centerView)
-        centerView.addSubview(surahNameLabel)
-        centerView.addSubview(translationLabel)
-        
+        addSubview(leftStackView)
+        addSubview(rightStackView)
+                
         configureCell()
     }
     
@@ -113,7 +136,15 @@ class SurahNameCell: UITableViewCell {
             $0.center.equalToSuperview()
         }
         
+        leftStackView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(rombView.snp.right).offset(20.0)
+        }
         
+        rightStackView.snp.makeConstraints {
+            $0.right.equalTo(-20.0)
+            $0.centerY.equalToSuperview()
+        }
     }
     
     required init?(coder: NSCoder) {
