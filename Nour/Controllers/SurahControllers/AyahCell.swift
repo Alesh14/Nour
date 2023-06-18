@@ -34,7 +34,7 @@ class AyahCell: UITableViewCell {
         let view = UIStackView(arrangedSubviews: [numLabel, playButton])
         
         view.axis = .horizontal
-        view.spacing = 5.0
+        view.spacing = 10.0
         
         return view
     }()

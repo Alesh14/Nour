@@ -45,6 +45,8 @@ class SurahPageScreen: UIViewController {
     private lazy var titleView: UIView = {
         let view = UIView()
         
+        view.backgroundColor = .systemBackground
+        
         return view
     }()
     
@@ -60,8 +62,11 @@ class SurahPageScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureNavBar()
+        
+        navigationItem.titleView = titleLabel
+        
+        view.addSubview(titleView)
+        configureTitleView()
         
         view.addSubview(tableView)
         configureTableView()
@@ -69,17 +74,28 @@ class SurahPageScreen: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
+    func configureTitleView() {
+        titleView.snp.makeConstraints {
+            $0.height.equalTo(50.0)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.left.right.equalToSuperview()
+        }
+        
+        titleView.addSubview(closeButton)
+        closeButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalTo(-20.0)
+        }
+    }
+    
     @objc func closeButtonPressed() {
         dismiss(animated: true)
     }
     
-    func configureNavBar() {
-        navigationItem.titleView = titleLabel
-    }
-    
     func configureTableView() {
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(titleView.snp.bottom)
+            $0.left.right.bottom.equalToSuperview()
         }
     }
     
