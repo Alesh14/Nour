@@ -16,14 +16,7 @@ class SettingsScreen: UIViewController {
     let deviderColor = UIColor(named: "deviderColor")
     let window = SceneDelegate.window
     
-//    let Title: UILabel = {
-//        let label = UILabel()
-//        label.text = "Настройки"
-//        label.font = UIFont.boldSystemFont(ofSize: 20.0)
-//        label.textAlignment = .left
-//        label.textColor = .white
-//        return label
-//    }()
+
     let userPhotoView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
