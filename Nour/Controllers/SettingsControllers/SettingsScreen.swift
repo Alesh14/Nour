@@ -10,27 +10,29 @@ import SnapKit
 
 class SettingsScreen: UIViewController {
     
-    let backroundColor = UIColor(named: "backgroundColor")
-    let bigTextColor = UIColor(named: "textColor")
-    let smallTextColor = UIColor(named: "miniTextColor")
-    let deviderColor = UIColor(named: "deviderColor")
-    let window = SceneDelegate.window
+    private let backroundColor = UIColor(named: "backgroundColor")
+    private let bigTextColor = UIColor(named: "textColor")
+    private let smallTextColor = UIColor(named: "miniTextColor")
+    private let deviderColor = UIColor(named: "deviderColor")
+    private let window = SceneDelegate.window
+    private let fontName = "ProximaVara-Roman_Bold"
     
 
     
     
     
    
-    let status1: UILabel = {
+    private lazy var status1: UILabel = {
         let label = UILabel()
         let text = "Appearance"
         label.text = text.uppercased()
-        label.font = UIFont.boldSystemFont(ofSize: 10.0)
+        label.font = UIFont(name: fontName, size: 10)
         label.textAlignment = .left
         label.textColor = UIColor(red: 0.357, green: 0.412, blue: 0.459, alpha: 1)
         return label
     }()
-    let colorPalette: UIImageView = {
+    
+    private lazy var colorPalette: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -38,26 +40,28 @@ class SettingsScreen: UIViewController {
         imageView.tintColor = .white
         return imageView
     }()
-    let darkMode: UILabel = {
+    
+    private lazy var darkMode: UILabel = {
         let label = UILabel()
         label.text = "Dark mode"
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.font = UIFont(name: fontName, size: 16)
         label.textAlignment = .left
         label.textColor = .white
         return label
     }()
-    let darkModeDescription: UILabel = {
+    
+    private lazy var darkModeDescription: UILabel = {
         let label = UILabel()
         label.text = "Follow the system settings"
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
+        label.font = UIFont(name: fontName, size: 14)
         label.textAlignment = .left
         label.textColor = UIColor(red: 0.431, green: 0.475, blue: 0.549, alpha: 0.6)
         return label
     }()
-    let dropDownButton: UIButton = {
+    
+    private lazy var dropDownButton: UIButton = {
        let button = UIButton()
-        button.setImage(
-            UIImage(systemName: "chevron.right"), for: .normal)
+        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action:#selector(isTappedDropDownButton), for: .touchUpInside)
         return button
@@ -89,30 +93,32 @@ class SettingsScreen: UIViewController {
     }
     
     
-    lazy var devider2: UIView = {
+    private lazy var devider2: UIView = {
         let view = UIView()
         view.backgroundColor = deviderColor
         return view
     }()
     
-    lazy var devider3: UIView = {
+    private lazy var devider3: UIView = {
         let view = UIView()
         view.backgroundColor = deviderColor
         return view
     }()
-    let status3: UILabel = {
+    
+    private lazy var status3: UILabel = {
         let label = UILabel()
         let text = "Version of app"
         label.text = text.uppercased()
-        label.font = UIFont.boldSystemFont(ofSize: 10.0)
+        label.font = UIFont(name: fontName, size: 10)
         label.textAlignment = .left
         label.textColor = UIColor(red: 0.357, green: 0.412, blue: 0.459, alpha: 1)
         return label
     }()
-    let appVersion: UILabel = {
+    
+    private lazy var appVersion: UILabel = {
         let label = UILabel()
         label.text = "Nour  v1.0.0"
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.font = UIFont(name: fontName, size: 16)
         label.textAlignment = .left
         label.textColor = .white
         return label
