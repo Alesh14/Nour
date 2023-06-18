@@ -10,8 +10,6 @@ import AVFoundation
 
 class AyahCell: UITableViewCell  {
 
-    var audioUrl: String?
-    
     var audioPlayer: AVAudioPlayer?
     
     private let colorName = "Dynamic-Color"
@@ -79,10 +77,15 @@ class AyahCell: UITableViewCell  {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(audioUrl: String) {
+        if let url = URL(string: audioUrl) {
+            downloadFileFromURL(url: url)
+        }
+    }
 
     @objc func playMusic() {
         guard let audioPlayer = audioPlayer else { return }
-        
         audioPlayer.prepareToPlay()
         audioPlayer.volume = 2.0
         audioPlayer.play()

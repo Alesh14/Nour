@@ -117,7 +117,7 @@ extension SurahPageScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
         
         let i = indexPath.row
-        cell.audioUrl = surah.ayahs[i].audio
+        cell.configure(audioUrl: surah.ayahs[i].audio)
         cell.numLabel.text = "\(surah.number):\(i + 1)"
         cell.ayahLabel.text = "\(surah.ayahs[i].text)"
         
