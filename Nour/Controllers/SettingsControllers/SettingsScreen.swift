@@ -17,38 +17,13 @@ class SettingsScreen: UIViewController {
     let window = SceneDelegate.window
     
 
-    let userPhotoView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 40
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "levi")
-        return imageView
-    }()
-    let userName: UILabel = {
-        let label = UILabel()
-        label.text = "Oleg Belotserkovsky"
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
-        label.textAlignment = .left
-        return label
-    }()
-    let userDiscription: UILabel = {
-        let label = UILabel()
-        label.text = "Rick"
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.textAlignment = .left
-        return label
-    }()
     
     
-    let devider1: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 0.082, green: 0.165, blue: 0.227, alpha: 1)
-        return view
-    }()
+    
+   
     let status1: UILabel = {
         let label = UILabel()
-        let text = "Внешний вид"
+        let text = "Appearance"
         label.text = text.uppercased()
         label.font = UIFont.boldSystemFont(ofSize: 10.0)
         label.textAlignment = .left
@@ -65,7 +40,7 @@ class SettingsScreen: UIViewController {
     }()
     let darkMode: UILabel = {
         let label = UILabel()
-        label.text = "Темная тема"
+        label.text = "Dark mode"
         label.font = UIFont.boldSystemFont(ofSize: 16.0)
         label.textAlignment = .left
         label.textColor = .white
@@ -73,7 +48,7 @@ class SettingsScreen: UIViewController {
     }()
     let darkModeDescription: UILabel = {
         let label = UILabel()
-        label.text = "Следовать настройкам системы"
+        label.text = "Follow the system settings"
         label.font = UIFont.boldSystemFont(ofSize: 14.0)
         label.textAlignment = .left
         label.textColor = UIColor(red: 0.431, green: 0.475, blue: 0.549, alpha: 0.6)
@@ -90,21 +65,21 @@ class SettingsScreen: UIViewController {
     
     
     @objc func isTappedDropDownButton(_ sender: Any){
-        let alert = UIAlertController(title: "Темная тема", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Dark mode", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancelAction)
 
-        let on = UIAlertAction(title: "Включенна", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Включенна"
+        let on = UIAlertAction(title: "Turn on", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn on"
             self.window?.overrideUserInterfaceStyle = .dark
         })
         on.setValue(bigTextColor, forKey: "titleTextColor")
         alert.addAction(on)
-        let off = UIAlertAction(title: "Выключенна", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Выключенна"
+        let off = UIAlertAction(title: "Turn off", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn off"
             self.window?.overrideUserInterfaceStyle = .light
         })
         off.setValue(bigTextColor, forKey: "titleTextColor")
         alert.addAction(off)
-        let system = UIAlertAction(title: "Следовать настройкам системы", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Следовать настройкам системы"
+        let system = UIAlertAction(title: "Follow the system settings", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Follow the system settings"
             self.window?.overrideUserInterfaceStyle = .unspecified
         })
         system.setValue(bigTextColor, forKey: "titleTextColor")
@@ -114,38 +89,20 @@ class SettingsScreen: UIViewController {
     }
     
     
-    let devider2: UIView = {
+    lazy var devider2: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.082, green: 0.165, blue: 0.227, alpha: 1)
+        view.backgroundColor = deviderColor
         return view
     }()
-    let status2: UILabel = {
-        let label = UILabel()
-        let text = "О приложении"
-        label.text = text.uppercased()
-        label.font = UIFont.boldSystemFont(ofSize: 10.0)
-        label.textAlignment = .left
-        label.textColor = UIColor(red: 0.357, green: 0.412, blue: 0.459, alpha: 1)
-        return label
-    }()
-    let appDescription: UILabel = {
-        let label = UILabel()
-        label.text = "Quran app"
-        label.font = UIFont.boldSystemFont(ofSize: 13.0)
-        label.textAlignment = .left
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
-        label.textColor = .white
-        return label
-    }()
-    let devider3: UIView = {
+    
+    lazy var devider3: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.082, green: 0.165, blue: 0.227, alpha: 1)
+        view.backgroundColor = deviderColor
         return view
     }()
     let status3: UILabel = {
         let label = UILabel()
-        let text = "Версия приложения"
+        let text = "Version of app"
         label.text = text.uppercased()
         label.font = UIFont.boldSystemFont(ofSize: 10.0)
         label.textAlignment = .left
@@ -155,7 +112,7 @@ class SettingsScreen: UIViewController {
     let appVersion: UILabel = {
         let label = UILabel()
         label.text = "Nour  v1.0.0"
-        label.font = UIFont.boldSystemFont(ofSize: 13.0)
+        label.font = UIFont.boldSystemFont(ofSize: 16.0)
         label.textAlignment = .left
         label.textColor = .white
         return label
@@ -173,70 +130,32 @@ private extension SettingsScreen{
     
     func setUpColors(){
         view.backgroundColor = backroundColor
-//        Title.textColor = bigTextColor
-        userName.textColor = bigTextColor
-        userDiscription.textColor = smallTextColor
+        
         darkMode.textColor = bigTextColor
         darkModeDescription.textColor = smallTextColor
-        devider1.backgroundColor = deviderColor
         devider2.backgroundColor = deviderColor
         devider3.backgroundColor = deviderColor
         status1.textColor = smallTextColor
-        status2.textColor = smallTextColor
         status3.textColor = smallTextColor
         colorPalette.tintColor = bigTextColor
         dropDownButton.tintColor = bigTextColor
         appVersion.textColor = bigTextColor
-        appDescription.textColor = bigTextColor
     }
     func setUpViews(){
-//        view.addSubview(Title)
-//        view.addSubview(userPhotoView)
-//        view.addSubview(userName)
-//        view.addSubview(userDiscription)
-        view.addSubview(devider1)
+
         view.addSubview(status1)
         view.addSubview(colorPalette)
         view.addSubview(darkMode)
         view.addSubview(darkModeDescription)
         view.addSubview(dropDownButton)
-        view.addSubview(devider2)
-        view.addSubview(status2)
-        view.addSubview(appDescription)
         view.addSubview(devider3)
         view.addSubview(status3)
         view.addSubview(appVersion)
     }
     func makeConstraints() {
         
-//        Title.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(60)
-//            make.centerX.equalToSuperview()
-//            make.height.equalTo(28)
-//        }
-//        userPhotoView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(69)
-//            make.leading.equalToSuperview().inset(20)
-//            make.width.height.equalTo(80)
-//        }
-//        userName.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(112)
-//            make.leading.equalTo(userPhotoView.snp.trailing).inset(-16)
-//            make.height.equalTo(24)
-//        }
-//        userDiscription.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(60)
-//            make.left.equalToSuperview().inset(-16)
-//            make.height.equalTo(20)
-//        }
-        
-        devider1.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(60)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(1)
-        }
         status1.snp.makeConstraints { make in
-            make.top.equalTo(devider1.snp.bottom).inset(-36)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(16)
             make.leading.equalToSuperview().inset(20)
             make.height.equalTo(16)
         }
@@ -259,22 +178,8 @@ private extension SettingsScreen{
             make.centerY.equalTo(colorPalette.snp.centerY)
             make.trailing.equalToSuperview().inset(20)
         }
-        devider2.snp.makeConstraints { make in
-            make.top.equalTo(darkModeDescription.snp.bottom).inset(-36)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.equalTo(1)
-        }
-        status2.snp.makeConstraints { make in
-            make.top.equalTo(devider2.snp.bottom).inset(-36)
-            make.leading.equalToSuperview().inset(20)
-            make.height.equalTo(16)
-        }
-        appDescription.snp.makeConstraints { make in
-            make.top.equalTo(status2.snp.bottom).inset(-24)
-            make.leading.trailing.equalToSuperview().inset(20)
-        }
         devider3.snp.makeConstraints { make in
-            make.top.equalTo(appDescription.snp.bottom).inset(-36)
+            make.top.equalTo(dropDownButton.snp.bottom).inset(-36)
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(1)
         }
