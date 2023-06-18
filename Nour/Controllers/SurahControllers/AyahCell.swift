@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AyahCell: UITableViewCell {
+
+    var audioUrl: String?
     
     private let colorName = "Dynamic-Color"
     
@@ -76,7 +79,11 @@ class AyahCell: UITableViewCell {
     }
 
     @objc func playMusic() {
-        print("playing music")
+        if let safeUrl = audioUrl {
+            guard let url = URL(string: safeUrl) else { return }
+            let player = AVPlayer(url: url)
+            player.play()
+        } 
     }
     
 }

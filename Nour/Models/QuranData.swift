@@ -9,21 +9,12 @@ import Foundation
 
 // MARK: - QuranData
 struct QuranData: Codable {
-    let code: Int
-    let status: String
     let data: DataClass
 }
 
 // MARK: - DataClass
 struct DataClass: Codable {
     let surahs: [Surah]
-    let edition: Edition
-}
-
-// MARK: - Edition
-struct Edition: Codable {
-    let identifier, language, name, englishName: String
-    let format, type: String
 }
 
 // MARK: - Surah
@@ -37,6 +28,8 @@ struct Surah: Codable {
 // MARK: - Ayah
 struct Ayah: Codable {
     let number: Int
+    let audio: String
+    let audioSecondary: [String]
     let text: String
     let numberInSurah, juz, manzil, page: Int
     let ruku, hizbQuarter: Int

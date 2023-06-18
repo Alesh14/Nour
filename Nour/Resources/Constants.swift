@@ -9,7 +9,7 @@ import Foundation
 
 struct K {
     static let surahIdentifier = "surah"
-    static let restAPIQuranArabic = "https://api.alquran.cloud/v1/quran/quran-uthmani"
+    static let restAPIQuranArabic = "https://api.alquran.cloud/v1/quran/ar.alafasy"
     static let restAPIQuranEnglish = "https://api.alquran.cloud/v1/quran/en.asad"
     static let ayahIdentifier = "ayah"
 }
