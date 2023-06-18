@@ -32,6 +32,11 @@ class SurahScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            print("Family: \(family) Font names: \(names)")
+//        }
+        
         view.backgroundColor = .systemBackground
         
         fetchData()
@@ -98,11 +103,10 @@ extension SurahScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as! SurahNameCell
         
         let i = indexPath.row
-        cell.surahNumberLabel.text = "\(i + 1)"
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
         cell.translationLabel.text = surahs[i].englishNameTranslation
-        
+        cell.surahNumberLabel.text = "\(i + 1)"
         let text = surahs[i].name.components(separatedBy: " ").last
         
         cell.arabicSurahNameLabel.text = text
