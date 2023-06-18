@@ -13,7 +13,7 @@ class SurahScreen: UIViewController {
     let network = NetworkManager()
     
     var surahs = [Surah]()
-    var translatedSurahs = [Surah]()
+    var translatedSurahs = [QuranDataTranslate.Surah]()
     
     let cellSpacingHeight: CGFloat = 10.0
 
@@ -31,11 +31,6 @@ class SurahScreen: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        for family in UIFont.familyNames.sorted() {
-//            let names = UIFont.fontNames(forFamilyName: family)
-//            print("Family: \(family) Font names: \(names)")
-//        }
         
         view.backgroundColor = .systemBackground
         
@@ -82,7 +77,6 @@ extension SurahScreen: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let i = indexPath.row
         let surahPageScreen = SurahPageScreen(surah: surahs[i], translatedSurah: translatedSurahs[i])
-        
         let nav = UINavigationController(rootViewController: surahPageScreen)
         nav.modalPresentationStyle = .overFullScreen
         

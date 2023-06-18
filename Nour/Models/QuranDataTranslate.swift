@@ -8,7 +8,16 @@
 import Foundation
 
 struct QuranDataTranslate: Codable {
-    let code: Int
-    let status: String
     let data: DataClass
+    struct DataClass: Codable {
+        let surahs: [Surah]
+    }
+
+    struct Surah: Codable {
+        let ayahs: [Ayah]
+    }
+
+    struct Ayah: Codable {
+        let text: String
+    }
 }

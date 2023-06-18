@@ -10,7 +10,7 @@ import UIKit
 class SurahPageScreen: UIViewController {
     
     private let surah: Surah
-    private let translatedSurah: Surah
+    private let translatedSurah: QuranDataTranslate.Surah
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -27,16 +27,18 @@ class SurahPageScreen: UIViewController {
         
         tableView.dataSource = self
         tableView.register(AyahCell.self, forCellReuseIdentifier: K.ayahIdentifier)
-            
+        
         return tableView
     }()
     
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
+    private lazy var closeButton: ResizableImageButton = {
+        let button = ResizableImageButton()
         
         button.tintColor = UIColor.label
         
-        button.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+        let closeButtonImage = UIImage(systemName: "xmark.circle")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(closeButtonImage, for: .normal)
+        
         button.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
         
         return button
@@ -50,7 +52,7 @@ class SurahPageScreen: UIViewController {
         return view
     }()
     
-    init(surah: Surah, translatedSurah: Surah) {
+    init(surah: Surah, translatedSurah: QuranDataTranslate.Surah) {
         self.surah = surah
         self.translatedSurah = translatedSurah
         super.init(nibName: nil, bundle: nil)
@@ -82,7 +84,9 @@ class SurahPageScreen: UIViewController {
         }
         
         titleView.addSubview(closeButton)
+        
         closeButton.snp.makeConstraints {
+            $0.width.height.equalTo(30.0)
             $0.centerY.equalToSuperview()
             $0.right.equalTo(-20.0)
         }
@@ -93,9 +97,9 @@ class SurahPageScreen: UIViewController {
     }
     
     func configureTableView() {
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(titleView.snp.bottom)
-            $0.left.right.bottom.equalToSuperview()
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(titleView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
     
@@ -113,10 +117,23 @@ extension SurahPageScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
         
         let i = indexPath.row
+        cell.audioUrl = surah.ayahs[i].audio
         cell.numLabel.text = "\(surah.number):\(i + 1)"
-        cell.ayahLabel.text = surah.ayahs[i].text
+        cell.ayahLabel.text = "\(surah.ayahs[i].text)"
         
         return cell
     }
 
+}
+
+// MARK: - ResizableImageButton
+
+class ResizableImageButton: UIButton {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView?.contentMode = .scaleAspectFit
+        imageView?.frame = bounds
+    }
 }

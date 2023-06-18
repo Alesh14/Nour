@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
 
-class AyahCell: UITableViewCell {
+class AyahCell: UITableViewCell  {
+
+    var audioUrl: String?
+    
+    var audioPlayer: AVAudioPlayer?
     
     private let colorName = "Dynamic-Color"
     
@@ -76,7 +81,29 @@ class AyahCell: UITableViewCell {
     }
 
     @objc func playMusic() {
-        print("playing music")
+        guard let audioPlayer = audioPlayer else { return }
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 2.0
+        audioPlayer.play()
+    }
+    
+    func downloadFileFromURL(url: URL){
+        var downloadTask:URLSessionDownloadTask
+        downloadTask = URLSession.shared.downloadTask(with: url) { (url, response, error) in
+            self.play(url: url!)
+        }
+        downloadTask.resume()
+    }
+    
+    func play(url:URL) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url as URL)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        } catch {
+            print("AVAudioPlayer init failed")
+        }
     }
     
 }
