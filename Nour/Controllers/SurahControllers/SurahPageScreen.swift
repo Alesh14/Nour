@@ -151,7 +151,9 @@ extension SurahPageScreen: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as? AyahCell
+        
+        guard let cell = cell else { return UITableViewCell() }
         
         let i = indexPath.row
         cell.numLabel.text = "\(surah.number):\(i + 1)"

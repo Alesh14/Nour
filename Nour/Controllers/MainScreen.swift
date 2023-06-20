@@ -24,7 +24,7 @@ class MainScreen: UITabBarController {
         VC2.title = "Dhikr"
         
         let nav2 = UINavigationController(rootViewController: VC2)
-        nav2.navigationBar.prefersLargeTitles = true
+        nav2.navigationBar.prefersLargeTitles = false
         
         nav2.tabBarItem = UITabBarItem(title: "Dhikr", image: UIImage(systemName: "33.circle"), tag: 1)
         

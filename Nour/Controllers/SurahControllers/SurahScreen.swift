@@ -94,7 +94,9 @@ extension SurahScreen: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as! SurahNameCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as? SurahNameCell
+        
+        guard let cell = cell else { return UITableViewCell() }
         
         let i = indexPath.row
         cell.surahNameLabel.text = surahs[i].englishName

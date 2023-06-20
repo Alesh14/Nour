@@ -18,6 +18,20 @@
 		A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6487CA32A378FE9003ED9BF /* SurahScreen.swift */; };
 		A6487CA72A379079003ED9BF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A6487CA62A379079003ED9BF /* SnapKit */; };
 		A66416AF2A3D742400210E43 /* noorehidayat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A66416AE2A3D742400210E43 /* noorehidayat.ttf */; };
+		A699ACB72A416ABA0042652E /* lailahaillahm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAA2A416ABA0042652E /* lailahaillahm.m4a */; };
+		A699ACB82A416ABA0042652E /* Hasbunallah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAB2A416ABA0042652E /* Hasbunallah.m4a */; };
+		A699ACB92A416ABA0042652E /* AllahuAkbar.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAC2A416ABA0042652E /* AllahuAkbar.m4a */; };
+		A699ACBA2A416ABA0042652E /* Lailahaillah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAD2A416ABA0042652E /* Lailahaillah.m4a */; };
+		A699ACBB2A416ABA0042652E /* Lahaula.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAE2A416ABA0042652E /* Lahaula.m4a */; };
+		A699ACBC2A416ABA0042652E /* KamaaSollaita.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACAF2A416ABA0042652E /* KamaaSollaita.m4a */; };
+		A699ACBD2A416ABA0042652E /* AstagfirullahalAziim.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB02A416ABA0042652E /* AstagfirullahalAziim.m4a */; };
+		A699ACBE2A416ABA0042652E /* SubhanAllah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB12A416ABA0042652E /* SubhanAllah.m4a */; };
+		A699ACBF2A416ABA0042652E /* Salauat.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB22A416ABA0042652E /* Salauat.m4a */; };
+		A699ACC02A416ABA0042652E /* Uabihamdih.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB32A416ABA0042652E /* Uabihamdih.m4a */; };
+		A699ACC12A416ABA0042652E /* Alhamdulillah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB42A416ABA0042652E /* Alhamdulillah.m4a */; };
+		A699ACC22A416ABA0042652E /* KamaaBaarakta.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB52A416ABA0042652E /* KamaaBaarakta.m4a */; };
+		A699ACC32A416ABA0042652E /* Astahfirullah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB62A416ABA0042652E /* Astahfirullah.m4a */; };
+		A699ACC52A416BE10042652E /* DhikrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699ACC42A416BE10042652E /* DhikrCell.swift */; };
 		A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */; };
 		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 		A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */; };
@@ -41,6 +55,20 @@
 		A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrScreen.swift; sourceTree = "<group>"; };
 		A6487CA32A378FE9003ED9BF /* SurahScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahScreen.swift; sourceTree = "<group>"; };
 		A66416AE2A3D742400210E43 /* noorehidayat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noorehidayat.ttf; sourceTree = "<group>"; };
+		A699ACAA2A416ABA0042652E /* lailahaillahm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lailahaillahm.m4a; sourceTree = "<group>"; };
+		A699ACAB2A416ABA0042652E /* Hasbunallah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hasbunallah.m4a; sourceTree = "<group>"; };
+		A699ACAC2A416ABA0042652E /* AllahuAkbar.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = AllahuAkbar.m4a; sourceTree = "<group>"; };
+		A699ACAD2A416ABA0042652E /* Lailahaillah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lailahaillah.m4a; sourceTree = "<group>"; };
+		A699ACAE2A416ABA0042652E /* Lahaula.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lahaula.m4a; sourceTree = "<group>"; };
+		A699ACAF2A416ABA0042652E /* KamaaSollaita.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = KamaaSollaita.m4a; sourceTree = "<group>"; };
+		A699ACB02A416ABA0042652E /* AstagfirullahalAziim.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = AstagfirullahalAziim.m4a; sourceTree = "<group>"; };
+		A699ACB12A416ABA0042652E /* SubhanAllah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = SubhanAllah.m4a; sourceTree = "<group>"; };
+		A699ACB22A416ABA0042652E /* Salauat.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Salauat.m4a; sourceTree = "<group>"; };
+		A699ACB32A416ABA0042652E /* Uabihamdih.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uabihamdih.m4a; sourceTree = "<group>"; };
+		A699ACB42A416ABA0042652E /* Alhamdulillah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alhamdulillah.m4a; sourceTree = "<group>"; };
+		A699ACB52A416ABA0042652E /* KamaaBaarakta.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = KamaaBaarakta.m4a; sourceTree = "<group>"; };
+		A699ACB62A416ABA0042652E /* Astahfirullah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Astahfirullah.m4a; sourceTree = "<group>"; };
+		A699ACC42A416BE10042652E /* DhikrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrCell.swift; sourceTree = "<group>"; };
 		A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahNameCell.swift; sourceTree = "<group>"; };
 		A6F7B35B2A3AE7EF002291CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Vara-VF.ttf"; sourceTree = "<group>"; };
@@ -75,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */,
+				A699ACC42A416BE10042652E /* DhikrCell.swift */,
 			);
 			path = DhikrControllers;
 			sourceTree = "<group>";
@@ -141,6 +170,7 @@
 		A6487C9B2A36D939003ED9BF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A699ACA92A416ABA0042652E /* Sounds */,
 				A6487C872A36D3E1003ED9BF /* AppDelegate.swift */,
 				A6487C892A36D3E1003ED9BF /* SceneDelegate.swift */,
 				A601F73C2A3ADC9B00989752 /* Fonts */,
@@ -158,6 +188,26 @@
 				A6487C9F2A36E5D2003ED9BF /* MainScreen.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A699ACA92A416ABA0042652E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A699ACAA2A416ABA0042652E /* lailahaillahm.m4a */,
+				A699ACAB2A416ABA0042652E /* Hasbunallah.m4a */,
+				A699ACAC2A416ABA0042652E /* AllahuAkbar.m4a */,
+				A699ACAD2A416ABA0042652E /* Lailahaillah.m4a */,
+				A699ACAE2A416ABA0042652E /* Lahaula.m4a */,
+				A699ACAF2A416ABA0042652E /* KamaaSollaita.m4a */,
+				A699ACB02A416ABA0042652E /* AstagfirullahalAziim.m4a */,
+				A699ACB12A416ABA0042652E /* SubhanAllah.m4a */,
+				A699ACB22A416ABA0042652E /* Salauat.m4a */,
+				A699ACB32A416ABA0042652E /* Uabihamdih.m4a */,
+				A699ACB42A416ABA0042652E /* Alhamdulillah.m4a */,
+				A699ACB52A416ABA0042652E /* KamaaBaarakta.m4a */,
+				A699ACB62A416ABA0042652E /* Astahfirullah.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		A6F7B35F2A3C1078002291CB /* Models */ = {
@@ -235,9 +285,22 @@
 			files = (
 				A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */,
 				A66416AF2A3D742400210E43 /* noorehidayat.ttf in Resources */,
+				A699ACBE2A416ABA0042652E /* SubhanAllah.m4a in Resources */,
+				A699ACC12A416ABA0042652E /* Alhamdulillah.m4a in Resources */,
+				A699ACB72A416ABA0042652E /* lailahaillahm.m4a in Resources */,
+				A699ACBA2A416ABA0042652E /* Lailahaillah.m4a in Resources */,
 				A6487C942A36D3E2003ED9BF /* LaunchScreen.storyboard in Resources */,
+				A699ACB82A416ABA0042652E /* Hasbunallah.m4a in Resources */,
 				A601F73F2A3ADC9B00989752 /* KFGQPC Uthman Taha Naskh Regular.ttf in Resources */,
+				A699ACC22A416ABA0042652E /* KamaaBaarakta.m4a in Resources */,
+				A699ACBB2A416ABA0042652E /* Lahaula.m4a in Resources */,
 				A6487C912A36D3E2003ED9BF /* Assets.xcassets in Resources */,
+				A699ACBC2A416ABA0042652E /* KamaaSollaita.m4a in Resources */,
+				A699ACBD2A416ABA0042652E /* AstagfirullahalAziim.m4a in Resources */,
+				A699ACBF2A416ABA0042652E /* Salauat.m4a in Resources */,
+				A699ACC32A416ABA0042652E /* Astahfirullah.m4a in Resources */,
+				A699ACB92A416ABA0042652E /* AllahuAkbar.m4a in Resources */,
+				A699ACC02A416ABA0042652E /* Uabihamdih.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +323,7 @@
 				A6F7B3732A3CC843002291CB /* QuranDataTranslate.swift in Sources */,
 				A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */,
 				A6487CA42A378FE9003ED9BF /* SurahScreen.swift in Sources */,
+				A699ACC52A416BE10042652E /* DhikrCell.swift in Sources */,
 				A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
