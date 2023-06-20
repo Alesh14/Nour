@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SurahPageScreen: UIViewController {
     
     private let surah: Surah
     private let translatedSurah: QuranDataTranslate.Surah
+    
+    private let items = ["Reading", "Translation"]
 
+    private var isTranslated = false
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         
@@ -52,6 +57,14 @@ class SurahPageScreen: UIViewController {
         return view
     }()
     
+    private lazy var segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.addTarget(self, action: #selector(segmentAction), for: .valueChanged)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = UIColor(named: "Dynamic-Color")
+        return segmentedControl
+    }()
+    
     init(surah: Surah, translatedSurah: QuranDataTranslate.Surah) {
         self.surah = surah
         self.translatedSurah = translatedSurah
@@ -76,6 +89,21 @@ class SurahPageScreen: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+       switch (segmentedControl.selectedSegmentIndex) {
+       case 0:
+           isTranslated = false
+           tableView.reloadData()
+           break
+       case 1:
+           isTranslated = true
+           tableView.reloadData()
+           break
+       default:
+           break
+       }
+   }
+    
     func configureTitleView() {
         titleView.snp.makeConstraints {
             $0.height.equalTo(50.0)
@@ -88,7 +116,15 @@ class SurahPageScreen: UIViewController {
         closeButton.snp.makeConstraints {
             $0.width.height.equalTo(30.0)
             $0.centerY.equalToSuperview()
-            $0.right.equalTo(-20.0)
+            $0.right.equalTo(-15.0)
+        }
+        
+        titleView.addSubview(segmentedControl)
+        
+        segmentedControl.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(10.0)
+            $0.right.equalTo(closeButton.snp.left).offset(-10.0)
+            $0.height.equalToSuperview()
         }
     }
     
@@ -97,9 +133,10 @@ class SurahPageScreen: UIViewController {
     }
     
     func configureTableView() {
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(titleView.snp.bottom)
-            make.leading.trailing.bottom.equalToSuperview()
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(titleView.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
@@ -117,9 +154,16 @@ extension SurahPageScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
         
         let i = indexPath.row
-        cell.configure(audioUrl: surah.ayahs[i].audio)
+        cell.configure(audioUrl: surah.ayahs[i].audio, delegate: self)
         cell.numLabel.text = "\(surah.number):\(i + 1)"
-        cell.ayahLabel.text = "\(surah.ayahs[i].text)"
+        
+        if isTranslated {
+            cell.ayahLabel.font = UIFont(name: "Verdana", size: 23.0)
+            cell.ayahLabel.text = "\(translatedSurah.ayahs[i].text)"
+        } else {
+            cell.ayahLabel.font = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 40.0)
+            cell.ayahLabel.text = "\(surah.ayahs[i].text)"
+        }
         
         return cell
     }
@@ -133,7 +177,25 @@ class ResizableImageButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView?.contentMode = .scaleAspectFit
-        imageView?.frame = bounds
+        guard let imageView = imageView else { return }
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = bounds
     }
+    
+}
+
+// MARK: - AVAudioPlayerDelegate
+
+extension SurahPageScreen: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
+    }
+}
+
+extension SurahPageScreen: AyahDelegate {
+    
+    func playButtonPressed() {
+        
+    }
+    
 }

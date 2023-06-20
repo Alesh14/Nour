@@ -8,11 +8,18 @@
 import UIKit
 import AVFoundation
 
-class AyahCell: UITableViewCell  {
+protocol AyahDelegate {
+    func playButtonPressed()
+}
 
-    var audioPlayer: AVAudioPlayer?
+class AyahCell: UITableViewCell, AVAudioPlayerDelegate  {
     
+    var delegate: SurahPageScreen?
+    
+    private var audioUrl: String?
     private let colorName = "Dynamic-Color"
+    private let playImage = UIImage(systemName: "play")
+    private let pauseImage = UIImage(systemName: "pause")
     
     lazy var numLabel: UILabel = {
         let label = UILabel()
@@ -27,14 +34,14 @@ class AyahCell: UITableViewCell  {
         let button = UIButton()
         
         button.tintColor = UIColor.label
-        button.setImage(UIImage(systemName: "play"), for: .normal)
-        button.addTarget(self, action: #selector(playMusic), for: .touchUpInside)
+        button.setImage(playImage, for: .normal)
+        button.addTarget(self, action: #selector(playButtonPressed), for: .touchUpInside)
         
         return button
     }()
     
     private lazy var stackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [numLabel, playButton])
+        let view = UIStackView(arrangedSubviews: [numLabel])
         
         view.axis = .horizontal
         view.spacing = 10.0
@@ -46,8 +53,7 @@ class AyahCell: UITableViewCell  {
         let label = UILabel()
         
         label.numberOfLines = 0
-        label.font = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 40.0)
-        
+
         return label
     }()
     
@@ -55,8 +61,6 @@ class AyahCell: UITableViewCell  {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(stackView)
-
-        stackView.addArrangedSubview(playButton)
 
         stackView.snp.makeConstraints {
             $0.left.equalTo(20.0)
@@ -69,7 +73,7 @@ class AyahCell: UITableViewCell  {
         ayahLabel.textAlignment = .center
         
         ayahLabel.snp.makeConstraints {
-            $0.top.equalTo(stackView.snp.bottom)
+            $0.top.equalTo(stackView.snp.bottom).offset(3.0)
             $0.left.right.bottom.equalToSuperview().inset(10.0)
         }
     }
@@ -78,35 +82,13 @@ class AyahCell: UITableViewCell  {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(audioUrl: String) {
-        if let url = URL(string: audioUrl) {
-            downloadFileFromURL(url: url)
-        }
+    func configure(audioUrl: String, delegate: SurahPageScreen) {
+        self.delegate = delegate
+        self.audioUrl = audioUrl
     }
 
-    @objc func playMusic() {
-        guard let audioPlayer = audioPlayer else { return }
-        audioPlayer.prepareToPlay()
-        audioPlayer.volume = 2.0
-        audioPlayer.play()
+    @objc func playButtonPressed() {
+        
     }
-    
-    func downloadFileFromURL(url: URL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url) { (url, response, error) in
-            self.play(url: url!)
-        }
-        downloadTask.resume()
-    }
-    
-    func play(url:URL) {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url as URL)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-    }
-    
+
 }

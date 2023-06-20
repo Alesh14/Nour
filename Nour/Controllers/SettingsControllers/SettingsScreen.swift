@@ -54,10 +54,10 @@ class SettingsScreen: UIViewController {
         label.textColor = UIColor(red: 0.431, green: 0.475, blue: 0.549, alpha: 0.6)
         return label
     }()
-    let dropDownButton: UIButton = {
+    
+    private lazy var dropDownButton: UIButton = {
        let button = UIButton()
-        button.setImage(
-            UIImage(systemName: "chevron.right"), for: .normal)
+        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.tintColor = .white
         button.addTarget(self, action:#selector(isTappedDropDownButton), for: .touchUpInside)
         return button
@@ -69,23 +69,22 @@ class SettingsScreen: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancelAction)
 
-        let on = UIAlertAction(title: "Turn on", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn on"
+        lazy var on = UIAlertAction(title: "Turn on", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn on"
             self.window?.overrideUserInterfaceStyle = .dark
         })
         on.setValue(bigTextColor, forKey: "titleTextColor")
         alert.addAction(on)
-        let off = UIAlertAction(title: "Turn off", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn off"
+        lazy var off = UIAlertAction(title: "Turn off", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Turn off"
             self.window?.overrideUserInterfaceStyle = .light
         })
         off.setValue(bigTextColor, forKey: "titleTextColor")
         alert.addAction(off)
-        let system = UIAlertAction(title: "Follow the system settings", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Follow the system settings"
+        lazy var system = UIAlertAction(title: "Follow the system settings", style: UIAlertAction.Style.default, handler:{ UIAlertAction in self.darkModeDescription.text = "Follow the system settings"
             self.window?.overrideUserInterfaceStyle = .unspecified
         })
         system.setValue(bigTextColor, forKey: "titleTextColor")
         alert.addAction(system)
         self.present(alert, animated: true)
-
     }
     
     
@@ -100,6 +99,7 @@ class SettingsScreen: UIViewController {
         view.backgroundColor = deviderColor
         return view
     }()
+    
     let status3: UILabel = {
         let label = UILabel()
         let text = "Version of app"
