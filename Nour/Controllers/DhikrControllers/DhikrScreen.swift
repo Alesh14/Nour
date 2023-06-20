@@ -45,7 +45,22 @@ class DhikrScreen: UIViewController {
 extension DhikrScreen: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let i = indexPath.row
         
+        lazy var counterScreen: CounterScreen = {
+            let dhikr = K.dhikrArray[i]
+
+            let count = dataBase.object(forKey: String(dhikr.id)) as? Int
+                        
+            let text = dhikr.dhikr
+            let counterScreen = CounterScreen(delegate: self, count: count ?? 0, dhikrSound: dhikr.dhikrSound, id: dhikr.id)
+            
+            counterScreen.dhikrLabel.text = text
+            
+            return counterScreen
+        }()
+        
+        navigationController?.pushViewController(counterScreen, animated: true)
     }
     
 }
@@ -59,7 +74,9 @@ extension DhikrScreen: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.dhikrIdentifier) as! DhikrCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.dhikrIdentifier) as? DhikrCell
+        
+        guard let cell = cell else { return UITableViewCell() }
         
         let i = indexPath.row
         let dhikr = K.dhikrArray[i]
@@ -74,6 +91,16 @@ extension DhikrScreen: UITableViewDataSource {
         cell.dhikrLabel.text = text
         
         return cell
+    }
+    
+}
+
+// MARK: - CounterDelegate
+
+extension DhikrScreen: CounterDelegate {
+    
+    func updateDataBase(count: Int, key: String) {
+        dataBase.set(count, forKey: key)
     }
     
 }

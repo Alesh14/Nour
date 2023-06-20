@@ -32,6 +32,7 @@
 		A699ACC22A416ABA0042652E /* KamaaBaarakta.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB52A416ABA0042652E /* KamaaBaarakta.m4a */; };
 		A699ACC32A416ABA0042652E /* Astahfirullah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB62A416ABA0042652E /* Astahfirullah.m4a */; };
 		A699ACC52A416BE10042652E /* DhikrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699ACC42A416BE10042652E /* DhikrCell.swift */; };
+		A699ACC72A4170D50042652E /* CounterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699ACC62A4170D50042652E /* CounterScreen.swift */; };
 		A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */; };
 		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 		A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */; };
@@ -69,6 +70,7 @@
 		A699ACB52A416ABA0042652E /* KamaaBaarakta.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = KamaaBaarakta.m4a; sourceTree = "<group>"; };
 		A699ACB62A416ABA0042652E /* Astahfirullah.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Astahfirullah.m4a; sourceTree = "<group>"; };
 		A699ACC42A416BE10042652E /* DhikrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrCell.swift; sourceTree = "<group>"; };
+		A699ACC62A4170D50042652E /* CounterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterScreen.swift; sourceTree = "<group>"; };
 		A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahNameCell.swift; sourceTree = "<group>"; };
 		A6F7B35B2A3AE7EF002291CB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Vara-VF.ttf"; sourceTree = "<group>"; };
@@ -102,8 +104,9 @@
 		A601F7382A3AD81F00989752 /* DhikrControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */,
 				A699ACC42A416BE10042652E /* DhikrCell.swift */,
+				A6487CA12A378FC9003ED9BF /* DhikrScreen.swift */,
+				A699ACC62A4170D50042652E /* CounterScreen.swift */,
 			);
 			path = DhikrControllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				A6F7B3772A3CE244002291CB /* AyahCell.swift in Sources */,
 				A6487CA22A378FC9003ED9BF /* DhikrScreen.swift in Sources */,
 				A6487C8A2A36D3E1003ED9BF /* SceneDelegate.swift in Sources */,
+				A699ACC72A4170D50042652E /* CounterScreen.swift in Sources */,
 				A6F7B36F2A3C58C5002291CB /* SurahPageScreen.swift in Sources */,
 				A6F7B3732A3CC843002291CB /* QuranDataTranslate.swift in Sources */,
 				A601F7432A3ADD2100989752 /* SettingsScreen.swift in Sources */,
