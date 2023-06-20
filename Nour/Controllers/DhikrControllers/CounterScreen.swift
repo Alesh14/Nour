@@ -147,7 +147,7 @@ class CounterScreen: UIViewController {
         view.addSubview(dhikrView)
         configureDhikrView()
     
-        Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
     }
     
     func configureDhikrView() {
