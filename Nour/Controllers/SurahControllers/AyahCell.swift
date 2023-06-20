@@ -8,15 +8,8 @@
 import UIKit
 import AVFoundation
 
-protocol AyahDelegate {
-    func playButtonPressed()
-}
-
-class AyahCell: UITableViewCell, AVAudioPlayerDelegate  {
+class AyahCell: UITableViewCell  {
     
-    var delegate: SurahPageScreen?
-    
-    private var audioUrl: String?
     private let colorName = "Dynamic-Color"
     private let playImage = UIImage(systemName: "play")
     private let pauseImage = UIImage(systemName: "pause")
@@ -80,11 +73,6 @@ class AyahCell: UITableViewCell, AVAudioPlayerDelegate  {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure(audioUrl: String, delegate: SurahPageScreen) {
-        self.delegate = delegate
-        self.audioUrl = audioUrl
     }
 
     @objc func playButtonPressed() {

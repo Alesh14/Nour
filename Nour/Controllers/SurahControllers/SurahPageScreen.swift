@@ -154,7 +154,6 @@ extension SurahPageScreen: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.ayahIdentifier) as! AyahCell
         
         let i = indexPath.row
-        cell.configure(audioUrl: surah.ayahs[i].audio, delegate: self)
         cell.numLabel.text = "\(surah.number):\(i + 1)"
         
         if isTranslated {
@@ -180,22 +179,6 @@ class ResizableImageButton: UIButton {
         guard let imageView = imageView else { return }
         imageView.contentMode = .scaleAspectFit
         imageView.frame = bounds
-    }
-    
-}
-
-// MARK: - AVAudioPlayerDelegate
-
-extension SurahPageScreen: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        
-    }
-}
-
-extension SurahPageScreen: AyahDelegate {
-    
-    func playButtonPressed() {
-        
     }
     
 }
