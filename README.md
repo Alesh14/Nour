@@ -4,12 +4,17 @@
 
 ## Features
 
-- **Quran Kareem:** Access the complete text of the Quran, divided into chapters (surahs) and verses (ayahs). Navigate through the Quran and read specific passages with ease.
+- **Quran Kareem:** Access the complete text of the Quran, divided into chapters (surahs) and verses (ayahs). Navigate through the Quran and read.
 - **Translations:** Translation to read the Quran in English language and deepen your understanding of the verses.
 - **Dhikr Counter:** Engage in Dhikr by using the integrated Dhikr counter. Keep track of your progress and achievements in the realm of Dhikr.
 - **Settings:** Customize the appearance of the app by choosing between different light themes.
 
 ## Installation
+
+1. Clone the repository: `git clone https://github.com/Alesh14/Nour.git`
+2. Navigate to the project directory: `cd nour-project`
+3. Run Project
+
 
 Surah List
 
