@@ -32,7 +32,7 @@ https://github.com/Alesh14/Nour/assets/124784381/6c1158dc-911d-4827-bcfd-9fa77d2
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/Alesh14/Nour.git`
-2. Navigate to the project directory: `cd nour-project`
+2. Navigate to the project directory: `cd Nour`
 3. Run Project
 
 ## Technologies Used
