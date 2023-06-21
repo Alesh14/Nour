@@ -9,6 +9,15 @@
 - **Dhikr Counter:** Engage in Dhikr by using the integrated Dhikr counter. Keep track of your progress and achievements in the realm of Dhikr.
 - **Settings:** Customize the appearance of the app by choosing between different light themes.
 
+## Authors
+
+The Nour Project is developed and maintained by the following individuals:
+
+- Alisher Manatbek ([GitHub](https://github.com/Alesh14))
+- Azamat Toqtasynuly ([GitHub](https://github.com/komik000))
+
+We appreciate the contributions of all the project's contributors.
+
 ## Demo
 
 Surah List
@@ -32,10 +41,14 @@ https://github.com/Alesh14/Nour/assets/124784381/6c1158dc-911d-4827-bcfd-9fa77d2
 - **Version-Control:** Tower
 - **External APIs:** [Quran API](https://alquran.cloud/api)
 
-Contributing
+## Contributing
 We welcome contributions to the Nour Project! To contribute, please follow these guidelines:
 
 1. Fork the repository and create a new branch.
 2. Make your changes and ensure the code remains clean and well-documented.
 3. Test your changes thoroughly.
 4. Submit a pull request describing the changes you've made.
+
+## Contact
+
+If you have any questions, suggestions, or feedback regarding the Nour Project, please reach out to our team at alisher.manatbek2004@gmail.com. We are here to assist you!
