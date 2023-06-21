@@ -1,6 +1,6 @@
 # Nour Project (iOS)
 
-![Untitled design](https://github.com/Alesh14/Nour/assets/124784381/a1afe48e-ca87-4091-a07e-d58ab43d51f3)
+<img src="https://github.com/Alesh14/Nour/assets/124784381/a1afe48e-ca87-4091-a07e-d58ab43d51f3" alt="Nour Project Logo" width="200" height="200">
 
 Surah List
 
