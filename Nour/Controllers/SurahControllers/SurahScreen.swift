@@ -39,7 +39,7 @@ class SurahScreen: UIViewController {
         view.addSubview(tableView)
         configureTableView()
         
-        tableView.showAnimatedSkeleton()
+        tableView.showSkeleton()
         
         fetchData {
             DispatchQueue.main.async {
@@ -56,14 +56,14 @@ class SurahScreen: UIViewController {
         }
     }
     
-    func fetchData(completion: @escaping () -> ()) {
+    func fetchData(completion: @escaping () -> Void) {
         network.getQuranArabic { data in
             guard let data = data else { return }
             
             data.data.surahs.forEach {
                 self.surahs.append($0)
             }
-    
+            
             completion()
         }
         
@@ -106,13 +106,28 @@ extension SurahScreen: SkeletonTableViewDataSource {
         guard let cell = cell else { return UITableViewCell() }
         
         let i = indexPath.row
+        
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
+        
         cell.translationLabel.text = surahs[i].englishNameTranslation
         cell.surahNumberLabel.text = "\(i + 1)"
-        let text = surahs[i].name.components(separatedBy: " ").last
         
+        let text = surahs[i].name.components(separatedBy: " ").last
+    
         cell.arabicSurahNameLabel.text = text
+        
+        cell.rombView.hideSkeleton()
+        
+        return cell
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, skeletonCellForRowAt indexPath: IndexPath) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.surahIdentifier) as? SurahNameCell
+        
+        guard let cell = cell else { return UITableViewCell() }
+        
+        cell.rombView.showAnimatedGradientSkeleton()
         
         return cell
     }

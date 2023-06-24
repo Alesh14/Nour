@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
 class SurahNameCell: UITableViewCell {
     
@@ -60,7 +61,7 @@ class SurahNameCell: UITableViewCell {
         return label
     }()
     
-    private lazy var rombView: UIView = {
+    lazy var rombView: UIView = {
         var view = UIView()
         
         view.rotate(angle: 45.0)
@@ -68,6 +69,8 @@ class SurahNameCell: UITableViewCell {
         let dynamicColor = UIColor(named: "Dynamic-Color")
         
         view.layer.cornerRadius = 5.0
+        
+        view.isSkeletonable = true
         
         view.backgroundColor = dynamicColor
         
