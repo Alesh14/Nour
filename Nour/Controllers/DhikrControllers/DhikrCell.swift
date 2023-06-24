@@ -9,7 +9,7 @@ import UIKit
 
 class DhikrCell: UITableViewCell {
     
-    private let arabicFont = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 30.0)
+    private let arabicFont = UIFont(name: "KFGQPCUthmanTahaNaskh", size: 40.0)
     
     lazy var dhikrLabel: UILabel = {
         let label = UILabel()

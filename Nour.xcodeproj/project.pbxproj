@@ -33,6 +33,7 @@
 		A699ACC32A416ABA0042652E /* Astahfirullah.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A699ACB62A416ABA0042652E /* Astahfirullah.m4a */; };
 		A699ACC52A416BE10042652E /* DhikrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699ACC42A416BE10042652E /* DhikrCell.swift */; };
 		A699ACC72A4170D50042652E /* CounterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A699ACC62A4170D50042652E /* CounterScreen.swift */; };
+		A6B41ADE2A441D24008491F6 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = A6B41ADD2A441D24008491F6 /* SkeletonView */; };
 		A6F7B35A2A3AE7B8002291CB /* SurahNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B3592A3AE7B8002291CB /* SurahNameCell.swift */; };
 		A6F7B35C2A3AE7EF002291CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7B35B2A3AE7EF002291CB /* Constants.swift */; };
 		A6F7B35E2A3C0E13002291CB /* Proxima Vara-VF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6F7B35D2A3C0E13002291CB /* Proxima Vara-VF.ttf */; };
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6B41ADE2A441D24008491F6 /* SkeletonView in Frameworks */,
 				A6487CA72A379079003ED9BF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +242,7 @@
 			name = Nour;
 			packageProductDependencies = (
 				A6487CA62A379079003ED9BF /* SnapKit */,
+				A6B41ADD2A441D24008491F6 /* SkeletonView */,
 			);
 			productName = Nour;
 			productReference = A6487C842A36D3E1003ED9BF /* Nour.app */;
@@ -271,6 +274,7 @@
 			mainGroup = A6487C7B2A36D3E1003ED9BF;
 			packageReferences = (
 				A6487CA52A379079003ED9BF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A6B41ADC2A441D24008491F6 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = A6487C852A36D3E1003ED9BF /* Products */;
 			projectDirPath = "";
@@ -480,9 +484,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.Alesh.Nour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -506,9 +513,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.learn.Alesh.Nour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -544,6 +554,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A6B41ADC2A441D24008491F6 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -551,6 +569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A6487CA52A379079003ED9BF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		A6B41ADD2A441D24008491F6 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A6B41ADC2A441D24008491F6 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

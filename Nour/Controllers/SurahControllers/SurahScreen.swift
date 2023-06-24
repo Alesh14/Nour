@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
 class SurahScreen: UIViewController {
     
@@ -25,7 +26,8 @@ class SurahScreen: UIViewController {
         
         tableView.rowHeight = 120.0
         tableView.separatorStyle = .none
-            
+        tableView.isSkeletonable = true
+        
         return tableView
     }()
 
@@ -33,8 +35,17 @@ class SurahScreen: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+
+        view.addSubview(tableView)
+        configureTableView()
         
-        fetchData()
+        tableView.showAnimatedSkeleton()
+        
+        fetchData {
+            DispatchQueue.main.async {
+                self.tableView.hideSkeleton()
+            }
+        }
     }
     
     func configureTableView() {
@@ -45,18 +56,15 @@ class SurahScreen: UIViewController {
         }
     }
     
-    func fetchData() {
+    func fetchData(completion: @escaping () -> ()) {
         network.getQuranArabic { data in
             guard let data = data else { return }
             
             data.data.surahs.forEach {
                 self.surahs.append($0)
             }
-            
-            DispatchQueue.main.async {
-                self.view.addSubview(self.tableView)
-                self.configureTableView()
-            }
+    
+            completion()
         }
         
         network.getQuranEnglish { data in
@@ -79,7 +87,6 @@ extension SurahScreen: UITableViewDelegate {
         let surahPageScreen = SurahPageScreen(surah: surahs[i], translatedSurah: translatedSurahs[i])
         let nav = UINavigationController(rootViewController: surahPageScreen)
         nav.modalPresentationStyle = .overFullScreen
-        
         present(nav, animated: true)
     }
     
@@ -87,7 +94,7 @@ extension SurahScreen: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension SurahScreen: UITableViewDataSource {
+extension SurahScreen: SkeletonTableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         surahs.count
@@ -109,5 +116,9 @@ extension SurahScreen: UITableViewDataSource {
         
         return cell
     }
-
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return K.surahIdentifier
+    }
+    
 }
