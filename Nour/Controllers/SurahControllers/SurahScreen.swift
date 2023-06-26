@@ -116,7 +116,6 @@ extension SurahScreen: SkeletonTableViewDataSource {
         let text = surahs[i].name.components(separatedBy: " ").last
     
         cell.arabicSurahNameLabel.text = text
-        
         cell.rombView.hideSkeleton()
         
         return cell

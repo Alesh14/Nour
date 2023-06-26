@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkManager {
+struct NetworkManager {
     
     func getQuranArabic(completion: @escaping (QuranData?) -> Void) {
         guard let url = URL(string: K.restAPIQuranArabic) else { return }
