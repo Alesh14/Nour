@@ -20,9 +20,7 @@ We appreciate the contributions of all the project's contributors.
 
 ## Demo
 
-
-https://github.com/Alesh14/Nour/assets/124784381/8927223c-1c10-4582-8ab7-c8c1236aa6f2
-
+https://github.com/Alesh14/Nour/assets/124784381/fbb8c716-e6a8-4ba6-a21a-6eb9ce705c4c
 
 ## Installation
 
