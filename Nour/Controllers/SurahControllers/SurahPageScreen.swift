@@ -14,7 +14,7 @@ class SurahPageScreen: UIViewController {
     private let translatedSurah: QuranDataTranslate.Surah
     
     private let items = ["Reading", "Translation"]
-
+    
     private var isTranslated = false
     
     private lazy var titleLabel: UILabel = {
@@ -41,8 +41,10 @@ class SurahPageScreen: UIViewController {
         
         button.tintColor = UIColor.label
         
-        let closeButtonImage = UIImage(systemName: "xmark.circle")?.withRenderingMode(.alwaysTemplate)
-        button.setImage(closeButtonImage, for: .normal)
+        if let closeButtonImage = UIImage(systemName: "xmark.circle") {
+            closeButtonImage.withRenderingMode(.alwaysTemplate)
+            button.setImage(closeButtonImage, for: .normal)
+        }
         
         button.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
         
@@ -59,9 +61,11 @@ class SurahPageScreen: UIViewController {
     
     private lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: items)
+        
         segmentedControl.addTarget(self, action: #selector(segmentAction), for: .valueChanged)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.backgroundColor = UIColor(named: "Dynamic-Color")
+        
         return segmentedControl
     }()
     
@@ -177,7 +181,6 @@ class ResizableImageButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         guard let imageView = imageView else { return }
         imageView.contentMode = .scaleAspectFit
         imageView.frame = bounds

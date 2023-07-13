@@ -38,10 +38,11 @@ class CounterScreen: UIViewController {
         let alert = UIAlertController (title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(
-            .init(title: "Reset counter", style: .default) { _ in
-                self.count = 0
-                DispatchQueue.main.async {
-                    self.counterButton.setTitle(String(self.count), for: .normal)
+            .init(title: "Reset counter", style: .default) { [weak self] _ in
+                guard let safeSelf = self else { return }
+                safeSelf.count = 0
+                DispatchQueue.main.async { 
+                    safeSelf.counterButton.setTitle(String(safeSelf.count), for: .normal)
                 }
             }
         )
@@ -130,13 +131,13 @@ class CounterScreen: UIViewController {
         title = "Counter"
         view.backgroundColor = .systemBackground
         
-        guard let url = Bundle.main.url(forResource: dhikrSound, withExtension: "m4a") else { return }
-        
-        player = try? AVAudioPlayer(contentsOf: url)
-        
-        guard let player = player else { return }
-        
-        player.delegate = self
+        if let url = Bundle.main.url(forResource: dhikrSound, withExtension: "m4a") {
+            player = try? AVAudioPlayer(contentsOf: url)
+            
+            if let player = player {
+                player.delegate = self
+            }
+        }
         
         view.addSubview(counterButton)
         configureCounterButton()
@@ -147,7 +148,7 @@ class CounterScreen: UIViewController {
         view.addSubview(dhikrView)
         configureDhikrView()
     
-        Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
     }
     
     func configureDhikrView() {
@@ -158,6 +159,7 @@ class CounterScreen: UIViewController {
         }
         
         dhikrView.addSubview(dhikrLabel)
+        
         dhikrLabel.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(10.0)
             $0.centerY.equalToSuperview()
@@ -224,6 +226,7 @@ class CounterScreen: UIViewController {
             if (count == 0) {
                 return
             }
+            
             present(alert, animated: true)
         }
     }
@@ -232,8 +235,9 @@ class CounterScreen: UIViewController {
         count += 1
         if (count % 33 == 0) { AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) {} }
         
-        DispatchQueue.main.async {
-            sender.setTitle("\(self.count)", for: .normal)
+        DispatchQueue.main.async { [weak self] in
+            guard let safeSelf = self else { return }
+            sender.setTitle("\(safeSelf.count)", for: .normal)
         }
     }
     
@@ -250,8 +254,10 @@ class CounterScreen: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-                
+        
         delegate.updateDataBase(count: count, key: "\(id)")
+                
+        player = nil
     }
     
     @objc func updateSlider() {

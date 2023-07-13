@@ -41,9 +41,10 @@ class SurahScreen: UIViewController {
         
         tableView.showSkeleton()
         
-        fetchData {
-            DispatchQueue.main.async {
-                self.tableView.hideSkeleton()
+        fetchData { 
+            DispatchQueue.main.async { [weak self] in
+                guard let safeSelf = self else { return }
+                safeSelf.tableView.hideSkeleton()
             }
         }
     }
@@ -60,8 +61,9 @@ class SurahScreen: UIViewController {
         network.getQuranArabic { data in
             guard let data = data else { return }
             
-            data.data.surahs.forEach {
-                self.surahs.append($0)
+            data.data.surahs.forEach { [weak self] surah in
+                guard let safeSelf = self else { return }
+                safeSelf.surahs.append(surah)
             }
             
             completion()
@@ -70,8 +72,9 @@ class SurahScreen: UIViewController {
         network.getQuranEnglish { data in
             guard let data = data else { return }
             
-            data.data.surahs.forEach {
-                self.translatedSurahs.append($0)
+            data.data.surahs.forEach { [weak self] surah in
+                guard let safeSelf = self else { return }
+                safeSelf.translatedSurahs.append(surah)
             }
         }
     }
@@ -107,6 +110,7 @@ extension SurahScreen: SkeletonTableViewDataSource {
         
         let i = indexPath.row
         
+        cell.rombView.hideSkeleton()
         cell.surahNameLabel.text = surahs[i].englishName
         cell.ayahCountLabel.text = "\(surahs[i].ayahs.count) ayahs"
         
@@ -116,7 +120,6 @@ extension SurahScreen: SkeletonTableViewDataSource {
         let text = surahs[i].name.components(separatedBy: " ").last
     
         cell.arabicSurahNameLabel.text = text
-        cell.rombView.hideSkeleton()
         
         return cell
     }
