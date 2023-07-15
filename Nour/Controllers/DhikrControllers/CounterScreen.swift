@@ -18,7 +18,7 @@ class CounterScreen: UIViewController {
     private let id: Int
     private var count: Int
     private let dhikrSound: String
-    private let delegate: DhikrScreen
+    private weak var delegate: DhikrScreen?
     private var player: AVAudioPlayer?
     private let dynamicColor = UIColor(named: "Dynamic-Color")
     private let playImage = UIImage(systemName: "play.circle")
@@ -40,6 +40,7 @@ class CounterScreen: UIViewController {
         alert.addAction(
             .init(title: "Reset counter", style: .default) { [weak self] _ in
                 guard let safeSelf = self else { return }
+                
                 safeSelf.count = 0
                 DispatchQueue.main.async { 
                     safeSelf.counterButton.setTitle(String(safeSelf.count), for: .normal)
@@ -97,6 +98,11 @@ class CounterScreen: UIViewController {
     private lazy var playButton: ResizableImageButton = {
         let button = ResizableImageButton()
         
+        if let image = playImage?.withRenderingMode(.alwaysTemplate)  {
+            button.setImage(image, for: .normal)
+        }
+
+            
         button.setImage(playImage?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = UIColor.label
         button.addTarget(self, action: #selector(playButtonPressed), for: .touchUpInside)
@@ -254,6 +260,8 @@ class CounterScreen: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
+        guard let delegate = delegate else { return }
         
         delegate.updateDataBase(count: count, key: "\(id)")
                 
